@@ -1,0 +1,9 @@
+{
+  "tasks": {
+    "dev": "deno run --watch main.ts"
+  },
+  "imports": {
+    "path": "https://deno.land/std@0.200.0/path/mod.ts",
+    "fs": "https://deno.land/std@0.200.0/fs/mod.ts"
+  }
+}
