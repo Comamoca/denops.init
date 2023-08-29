@@ -18,7 +18,7 @@ console.log("Execute `deno cache ./denops/plugin/main.ts`...");
 const cache = new Deno.Command(
   "deno",
   {
-    args: ["cache", "--reload", "./denops/plugin/main.ts"],
+    args: ["cache", "./denops/plugin/main.ts"],
   },
 );
 
