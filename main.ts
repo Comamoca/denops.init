@@ -1,5 +1,4 @@
-import { fromFileUrl } from "path";
-import { ensureDir } from "fs";
+import { ensureDir, fromFileUrl } from "./deps.ts";
 
 function pathResolver(meta: ImportMeta): (path: string) => string {
   return (path) => fromFileUrl(new URL(path, meta.url));
