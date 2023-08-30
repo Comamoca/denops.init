@@ -1,11 +1,9 @@
-import { ensureDir } from "./deps.ts";
-
 import { base } from "./templates/base.ts";
 import { deno } from "./templates/deno.ts";
 import { deps } from "./templates/deps.ts";
 
 console.log("Create directory...");
-await ensureDir("./denops/plugin");
+Deno.mkdir("./denops/plugin", { recursive: true });
 
 console.log("Copying templates...");
 Deno.writeTextFile("./denops/plugin/main.ts", base);
