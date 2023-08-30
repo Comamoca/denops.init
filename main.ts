@@ -1,18 +1,16 @@
-import { ensureDir, fromFileUrl } from "./deps.ts";
+import { ensureDir } from "./deps.ts";
 
-function pathResolver(meta: ImportMeta): (path: string) => string {
-  return (path) => fromFileUrl(new URL(path, meta.url));
-}
-
-const resolver = pathResolver(import.meta);
+import { base } from "./templates/base.ts";
+import { deno } from "./templates/deno.ts";
+import { deps } from "./templates/deps.ts";
 
 console.log("Create directory...");
 await ensureDir("./denops/plugin");
 
 console.log("Copying templates...");
-Deno.copyFile(resolver("./templates/base.ts"), "./denops/plugin/main.ts");
-Deno.copyFile(resolver("./templates/deps.ts"), "./deps.ts");
-Deno.copyFile(resolver("./templates/deno.json"), "./deno.json");
+Deno.writeTextFile("./denops/plugin/main.ts", base);
+Deno.writeTextFile("./deps.ts", deps);
+Deno.writeTextFile("./deno.json", deno);
 
 console.log("Execute `deno cache ./denops/plugin/main.ts`...");
 const cache = new Deno.Command(

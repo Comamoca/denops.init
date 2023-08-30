@@ -1,4 +1,5 @@
-import { Denops, ensure, execute, is } from "../../deps.ts";
+export const base =
+  `import { Denops, ensure, execute, is } from "../../deps.ts";
 
 export async function main(denops: Denops): Promise<void> {
   // ここにプラグインの処理を記載する
@@ -13,6 +14,7 @@ export async function main(denops: Denops): Promise<void> {
 
   await execute(
     denops,
-    `command! -nargs=1 HelloWorldEcho echomsg denops#request('${denops.name}', 'echo', [<q-args>])`,
+    \`command! -nargs=1 HelloWorldEcho echomsg denops#request('\${denops.name}', 'echo', [<q-args>])\`,
   );
 }
+`;
