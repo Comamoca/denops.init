@@ -57,4 +57,4 @@ MIT
 
 ## 👏 Affected projects
 
-- [denops.init](https://github.com/vim-denops/denops.vim)
+- [denops](https://github.com/vim-denops/denops.vim)
