@@ -10,7 +10,7 @@
 
 # denops.init
 
-Setup tools for [denops.vim]
+Setup tools for [denops.vim](https://github.com/vim-denops/denops.vim)
 
 <br>
 <br>
