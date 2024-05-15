@@ -19,10 +19,10 @@ export async function main(denops: Denops): Promise<void> {
 `;
 const deno = "{}";
 const deps =
-  `export { type Denops } from "https://deno.land/x/denops_std@v6.4.2/mod.ts";
-export { execute } from "https://deno.land/x/denops_std@v6.4.2/helper/mod.ts";
-export { ensure } from "https://deno.land/x/unknownutil@v3.18.0/mod.ts";
-export { is } from "https://deno.land/x/unknownutil@v3.18.0/mod.ts";
+  `export { type Denops } from "https://deno.land/x/denops_std@v6.5.0/mod.ts";
+export { execute } from "https://deno.land/x/denops_std@v6.5.0/helper/mod.ts";
+export { ensure } from "https://deno.land/x/unknownutil@v3.18.1/mod.ts";
+export { is } from "https://deno.land/x/unknownutil@v3.18.1/mod.ts";
 `;
 console.log("Create directory...");
 Deno.mkdir("./denops/plugin", {
