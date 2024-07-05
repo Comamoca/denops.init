@@ -19,8 +19,8 @@ export async function main(denops: Denops): Promise<void> {
 `;
 const deno = "{}";
 const deps =
-  `export { type Denops } from "https://deno.land/x/denops_std@v6.5.0/mod.ts";
-export { execute } from "https://deno.land/x/denops_std@v6.5.0/helper/mod.ts";
+  `export { type Denops } from "https://deno.land/x/denops_std@v7.0.0-pre0/mod.ts";
+export { execute } from "https://deno.land/x/denops_std@v7.0.0-pre0/helper/mod.ts";
 export { ensure } from "https://deno.land/x/unknownutil@v3.18.1/mod.ts";
 export { is } from "https://deno.land/x/unknownutil@v3.18.1/mod.ts";
 `;
