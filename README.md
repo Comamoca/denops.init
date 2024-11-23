@@ -36,7 +36,7 @@ Starter tools for [denops.vim](https://github.com/vim-denops/denops.vim)
 Run below command.
 
 ```sh
-deno run -A https://raw.githubusercontent.com/Comamoca/denops.init/main/online.ts
+deno run -Ar https://raw.githubusercontent.com/Comamoca/denops.init/main/online.ts
 ```
 
 ## ⛏️ Development
