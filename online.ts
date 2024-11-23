@@ -18,15 +18,14 @@ export async function main(denops: Denops): Promise<void> {
 }
 `;
 const deno = "{}";
-const deps =
-  `export { type Denops } from "https://deno.land/x/denops_std@v6.5.1/mod.ts";
-export { execute } from "https://deno.land/x/denops_std@v6.5.1/helper/mod.ts";
-export { ensure } from "https://deno.land/x/unknownutil@v3.18.1/mod.ts";
-export { is } from "https://deno.land/x/unknownutil@v3.18.1/mod.ts";
+const deps = `
+export { type Denops } from "jsr:@denops/std";
+export { execute } from "jsr:@denops/std/function";
+export { ensure, is } from "jsr:@core/unknownutil";
 `;
 console.log("Create directory...");
 Deno.mkdir("./denops/plugin", {
-  recursive: true,
+    recursive: true
 });
 console.log("Copying templates...");
 Deno.writeTextFile("./denops/plugin/main.ts", base);
@@ -34,10 +33,10 @@ Deno.writeTextFile("./deps.ts", deps);
 Deno.writeTextFile("./deno.json", deno);
 console.log("Execute `deno cache ./denops/plugin/main.ts`...");
 const cache = new Deno.Command("deno", {
-  args: [
-    "cache",
-    "./denops/plugin/main.ts",
-  ],
+    args: [
+        "cache",
+        "./denops/plugin/main.ts"
+    ]
 });
 const { _, stdout, stderr } = await cache.output();
 const decoder = new TextDecoder();
